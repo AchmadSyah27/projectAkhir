@@ -52,10 +52,12 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="#" class="list-group-item active">All Contact <span class="badge">10</span></a>
-            <a href="" class="list-group-item">Family <span class="badge">4</span></a>
-            <a href="" class="list-group-item">Friends <span class="badge">3</span></a>
-            <a href="" class="list-group-item">Other <span class="badge">3</span></a>
+            <?php $selected_group = Request::get('group_id') ?>
+            <a href="<?php echo e(route('contacts.index')); ?>" class="list-group-item <?php echo e(empty($selected_group) ? 'active' : ''); ?>" >All Contact <span class="badge"><?php echo e(App\Models\Contact::count()); ?></span></a>
+            <?php $__currentLoopData = App\Models\Group::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <a href="<?php echo e(route('contacts.index', ['group_id' => $group->id])); ?>" class="list-group-item <?php echo e($selected_group == $group->id ? 'active' : ''); ?>" ><?php echo e($group->name); ?> <span class="badge"><?php echo e($group->contacts->count()); ?></span></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
           </div>
         </div><!-- /.col-md-3 -->
 

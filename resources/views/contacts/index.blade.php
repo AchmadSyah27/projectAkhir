@@ -42,7 +42,8 @@
 
           <div class="text-center">
             <nav>
-            {!! $contacts->links() !!}
+             {{-- untuk query string pagination, supaya ketika pilih filter dari pagination tidak ke reset dan balik ke filter all contact --}}
+            {!! $contacts->appends( Request::query() )->render() !!}
             </nav>
           </div>
 

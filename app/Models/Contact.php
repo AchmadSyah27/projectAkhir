@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory;
+    public function group(){
+        return $this->belongsTo('App\Models\Group');
+    }
 }

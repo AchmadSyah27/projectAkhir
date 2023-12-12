@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dbconn', function(){
+    return view('DBConnection');
+});
+
 route::resource('contacts','App\Http\Controllers\ContactsController');

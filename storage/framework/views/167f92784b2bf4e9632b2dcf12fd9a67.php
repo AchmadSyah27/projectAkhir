@@ -41,7 +41,8 @@
 
           <div class="text-center">
             <nav>
-            <?php echo $contacts->links(); ?>
+             
+            <?php echo $contacts->appends( Request::query() )->render(); ?>
 
             </nav>
           </div>
