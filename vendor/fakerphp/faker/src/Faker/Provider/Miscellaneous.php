@@ -2,94 +2,47 @@
 
 namespace Faker\Provider;
 
-class Miscellaneous extends Base
+class Miscellaneous extends \Faker\Provider\Base
 {
-    /**
-     * @see https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
-     * On date of 2017-03-26
-     *
-     * U+1F600 - U+1F637 in Unicode Codepoint Escape Syntax
-     */
-    protected static $emoji = [
-        "\u{1F600}", "\u{1F601}", "\u{1F602}", "\u{1F603}",
-        "\u{1F604}", "\u{1F605}", "\u{1F606}", "\u{1F607}",
-        "\u{1F608}", "\u{1F609}", "\u{1F60A}", "\u{1F60B}",
-        "\u{1F60C}", "\u{1F60D}", "\u{1F60E}", "\u{1F60F}",
-        "\u{1F610}", "\u{1F611}", "\u{1F612}", "\u{1F613}",
-        "\u{1F614}", "\u{1F615}", "\u{1F616}", "\u{1F617}",
-        "\u{1F618}", "\u{1F619}", "\u{1F61A}", "\u{1F61B}",
-        "\u{1F61C}", "\u{1F61D}", "\u{1F61E}", "\u{1F61F}",
-        "\u{1F620}", "\u{1F621}", "\u{1F622}", "\u{1F623}",
-        "\u{1F624}", "\u{1F625}", "\u{1F626}", "\u{1F627}",
-        "\u{1F628}", "\u{1F629}", "\u{1F62A}", "\u{1F62B}",
-        "\u{1F62C}", "\u{1F62D}", "\u{1F62E}", "\u{1F62F}",
-        "\u{1F630}", "\u{1F631}", "\u{1F632}", "\u{1F633}",
-        "\u{1F634}", "\u{1F635}", "\u{1F636}", "\u{1F637}",
-    ];
+    protected static $languageCode = array('cn', 'de', 'en', 'es', 'fr', 'it', 'pt', 'ru');
 
     /**
-     * @see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
-     * On date of 2016-04-22
-     */
-    protected static $languageCode = [
-        'aa', 'ab', 'ae', 'af', 'ak', 'am', 'an', 'ar', 'as', 'av',
-        'ay', 'az', 'ba', 'be', 'bg', 'bh', 'bi', 'bm', 'bn', 'bo',
-        'br', 'bs', 'ca', 'ce', 'ch', 'co', 'cr', 'cs', 'cu', 'cv',
-        'cy', 'da', 'de', 'dv', 'dz', 'ee', 'el', 'en', 'eo', 'es',
-        'et', 'eu', 'fa', 'ff', 'fi', 'fj', 'fo', 'fr', 'fy', 'ga',
-        'gd', 'gl', 'gn', 'gu', 'gv', 'ha', 'he', 'hi', 'ho', 'hr',
-        'ht', 'hu', 'hy', 'hz', 'ia', 'id', 'ie', 'ig', 'ii', 'ik',
-        'io', 'is', 'it', 'iu', 'ja', 'jv', 'ka', 'kg', 'ki', 'kj',
-        'kk', 'kl', 'km', 'kn', 'ko', 'kr', 'ks', 'ku', 'kv', 'kw',
-        'ky', 'la', 'lb', 'lg', 'li', 'ln', 'lo', 'lt', 'lu', 'lv',
-        'mg', 'mh', 'mi', 'mk', 'ml', 'mn', 'mr', 'ms', 'mt', 'my',
-        'na', 'nb', 'nd', 'ne', 'ng', 'nl', 'nn', 'no', 'nr', 'nv',
-        'ny', 'oc', 'oj', 'om', 'or', 'os', 'pa', 'pi', 'pl', 'ps',
-        'pt', 'qu', 'rm', 'rn', 'ro', 'ru', 'rw', 'sa', 'sc', 'sd',
-        'se', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sq', 'sr',
-        'ss', 'st', 'su', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti',
-        'tk', 'tl', 'tn', 'to', 'tr', 'ts', 'tt', 'tw', 'ty', 'ug',
-        'uk', 'ur', 'uz', 've', 'vi', 'vo', 'wa', 'wo', 'xh', 'yi',
-        'yo', 'za', 'zh', 'zu',
-    ];
-
-    /**
-     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * On date of 2014-10-19
      */
-    protected static $countryCode = [
+    protected static $countryCode = array(
         'AD', 'AE', 'AF', 'AG', 'AI', 'AL', 'AM', 'AO', 'AQ', 'AR',
         'AS', 'AT', 'AU', 'AW', 'AX', 'AZ', 'BA', 'BB', 'BD', 'BE',
         'BF', 'BG', 'BH', 'BI', 'BJ', 'BL', 'BM', 'BN', 'BO', 'BQ',
-        'BR', 'BS', 'BT', 'BW', 'BY', 'BZ', 'CA', 'CC', 'CD', 'CF',
-        'CG', 'CH', 'CI', 'CK', 'CL', 'CM', 'CN', 'CO', 'CR', 'CU',
-        'CV', 'CW', 'CX', 'CY', 'CZ', 'DE', 'DJ', 'DK', 'DM', 'DO',
-        'DZ', 'EC', 'EE', 'EG', 'EH', 'ER', 'ES', 'ET', 'FI', 'FJ',
-        'FK', 'FM', 'FO', 'FR', 'GA', 'GB', 'GD', 'GE', 'GF', 'GG',
-        'GH', 'GI', 'GL', 'GM', 'GN', 'GP', 'GQ', 'GR', 'GS', 'GT',
-        'GU', 'GW', 'GY', 'HK', 'HN', 'HR', 'HT', 'HU', 'ID', 'IE',
-        'IL', 'IM', 'IN', 'IO', 'IQ', 'IR', 'IS', 'IT', 'JE', 'JM',
-        'JO', 'JP', 'KE', 'KG', 'KH', 'KI', 'KM', 'KN', 'KP', 'KR',
-        'KW', 'KY', 'KZ', 'LA', 'LB', 'LC', 'LI', 'LK', 'LR', 'LS',
-        'LT', 'LU', 'LV', 'LY', 'MA', 'MC', 'MD', 'ME', 'MF', 'MG',
-        'MH', 'MK', 'ML', 'MM', 'MN', 'MO', 'MP', 'MQ', 'MR', 'MS',
-        'MT', 'MU', 'MV', 'MW', 'MX', 'MY', 'MZ', 'NA', 'NC', 'NE',
-        'NF', 'NG', 'NI', 'NL', 'NO', 'NP', 'NR', 'NU', 'NZ', 'OM',
-        'PA', 'PE', 'PF', 'PG', 'PH', 'PK', 'PL', 'PM', 'PN', 'PR',
-        'PS', 'PT', 'PW', 'PY', 'QA', 'RE', 'RO', 'RS', 'RU', 'RW',
-        'SA', 'SB', 'SC', 'SD', 'SE', 'SG', 'SH', 'SI', 'SJ', 'SK',
-        'SL', 'SM', 'SN', 'SO', 'SR', 'SS', 'ST', 'SV', 'SX', 'SY',
-        'SZ', 'TC', 'TD', 'TF', 'TG', 'TH', 'TJ', 'TK', 'TL', 'TM',
-        'TN', 'TO', 'TR', 'TT', 'TV', 'TW', 'TZ', 'UA', 'UG', 'UM',
-        'US', 'UY', 'UZ', 'VA', 'VC', 'VE', 'VG', 'VI', 'VN', 'VU',
-        'WF', 'WS', 'YE', 'YT', 'ZA', 'ZM', 'ZW',
-    ];
+        'BR', 'BS', 'BT', 'BV', 'BW', 'BY', 'BZ', 'CA', 'CC', 'CD',
+        'CF', 'CG', 'CH', 'CI', 'CK', 'CL', 'CM', 'CN', 'CO', 'CR',
+        'CU', 'CV', 'CW', 'CX', 'CY', 'CZ', 'DE', 'DJ', 'DK', 'DM',
+        'DO', 'DZ', 'EC', 'EE', 'EG', 'EH', 'ER', 'ES', 'ET', 'FI',
+        'FJ', 'FK', 'FM', 'FO', 'FR', 'GA', 'GB', 'GD', 'GE', 'GF',
+        'GG', 'GH', 'GI', 'GL', 'GM', 'GN', 'GP', 'GQ', 'GR', 'GS',
+        'GT', 'GU', 'GW', 'GY', 'HK', 'HM', 'HN', 'HR', 'HT', 'HU',
+        'ID', 'IE', 'IL', 'IM', 'IN', 'IO', 'IQ', 'IR', 'IS', 'IT',
+        'JE', 'JM', 'JO', 'JP', 'KE', 'KG', 'KH', 'KI', 'KM', 'KN',
+        'KP', 'KR', 'KW', 'KY', 'KZ', 'LA', 'LB', 'LC', 'LI', 'LK',
+        'LR', 'LS', 'LT', 'LU', 'LV', 'LY', 'MA', 'MC', 'MD', 'ME',
+        'MF', 'MG', 'MH', 'MK', 'ML', 'MM', 'MN', 'MO', 'MP', 'MQ',
+        'MR', 'MS', 'MT', 'MU', 'MV', 'MW', 'MX', 'MY', 'MZ', 'NA',
+        'NC', 'NE', 'NF', 'NG', 'NI', 'NL', 'NO', 'NP', 'NR', 'NU',
+        'NZ', 'OM', 'PA', 'PE', 'PF', 'PG', 'PH', 'PK', 'PL', 'PM',
+        'PN', 'PR', 'PS', 'PT', 'PW', 'PY', 'QA', 'RE', 'RO', 'RS',
+        'RU', 'RW', 'SA', 'SB', 'SC', 'SD', 'SE', 'SG', 'SH', 'SI',
+        'SJ', 'SK', 'SL', 'SM', 'SN', 'SO', 'SR', 'SS', 'ST', 'SV',
+        'SX', 'SY', 'SZ', 'TC', 'TD', 'TF', 'TG', 'TH', 'TJ', 'TK',
+        'TL', 'TM', 'TN', 'TO', 'TR', 'TT', 'TV', 'TW', 'TZ', 'UA',
+        'UG', 'UM', 'US', 'UY', 'UZ', 'VA', 'VC', 'VE', 'VG', 'VI',
+        'VN', 'VU', 'WF', 'WS', 'YE', 'YT', 'ZA', 'ZM', 'ZW',
+    );
 
     /**
-     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      * On date of 2014-10-19
      */
-    protected static $countryISOAlpha3 = [
+    protected static $countryISOAlpha3 = array(
         'ABW', 'AFG', 'AGO', 'AIA', 'ALA', 'ALB', 'AND', 'ARE', 'ARG', 'ARM',
         'ASM', 'ATA', 'ATF', 'ATG', 'AUS', 'AUT', 'AZE', 'BDI', 'BEL', 'BEN',
         'BES', 'BFA', 'BGD', 'BGR', 'BHR', 'BHS', 'BIH', 'BLM', 'BLR', 'BLZ',
@@ -115,9 +68,9 @@ class Miscellaneous extends Base
         'TKL', 'TKM', 'TLS', 'TON', 'TTO', 'TUN', 'TUR', 'TUV', 'TWN', 'TZA',
         'UGA', 'UKR', 'UMI', 'URY', 'USA', 'UZB', 'VAT', 'VCT', 'VEN', 'VGB',
         'VIR', 'VNM', 'VUT', 'WLF', 'WSM', 'YEM', 'ZAF', 'ZMB', 'ZWE',
-    ];
+    );
 
-    protected static $localeData = [
+    protected static $localeData = array(
         'aa_DJ', 'aa_ER', 'aa_ET',
         'af_NA', 'af_ZA', 'ak_GH',
         'am_ET', 'ar_AE', 'ar_BH', 'ar_DZ',
@@ -198,84 +151,70 @@ class Miscellaneous extends Base
         'wal_ET', 'wo_SN', 'xh_ZA',
         'yo_NG', 'zh_CN', 'zh_HK',
         'zh_MO', 'zh_SG', 'zh_TW', 'zu_ZA',
-    ];
+    );
 
     /**
-     * @see https://en.wikipedia.org/wiki/ISO_4217
-     * On date of 2023-01-01
-     *
-     * With the following exceptions:
-     * SVC has been replaced by the USD in 2001: https://en.wikipedia.org/wiki/Salvadoran_col%C3%B3n
-     * ZWL has been suspended since 2009: https://en.wikipedia.org/wiki/Zimbabwean_dollar
-     * HRK has been replaced by EUR since 2023: https://en.wikipedia.org/wiki/Croatian_kuna
+     * @link http://en.wikipedia.org/wiki/ISO_4217
+     * On date of 2015-01-10
      */
-    protected static $currencyCode = [
+    protected static $currencyCode = array(
         'AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN',
         'BAM', 'BBD', 'BDT', 'BGN', 'BHD', 'BIF', 'BMD', 'BND', 'BOB', 'BRL',
-        'BSD', 'BTN', 'BWP', 'BYN', 'BZD', 'CAD', 'CDF', 'CHF', 'CLP', 'CNY',
-        'COP', 'CRC', 'CUC', 'CUP', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP', 'DZD',
-        'EGP', 'ERN', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL', 'GHS', 'GIP',
-        'GMD', 'GNF', 'GTQ', 'GYD', 'HKD', 'HNL', 'HTG', 'HUF', 'IDR', 'ILS',
-        'INR', 'IQD', 'IRR', 'ISK', 'JMD', 'JOD', 'JPY', 'KES', 'KGS', 'KHR',
-        'KMF', 'KPW', 'KRW', 'KWD', 'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD',
-        'LSL', 'LYD', 'MAD', 'MDL', 'MGA', 'MKD', 'MMK', 'MNT', 'MOP', 'MRU',
-        'MUR', 'MVR', 'MWK', 'MXN', 'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK',
-        'NPR', 'NZD', 'OMR', 'PAB', 'PEN', 'PGK', 'PHP', 'PKR', 'PLN', 'PYG',
-        'QAR', 'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SDG', 'SEK',
-        'SGD', 'SHP', 'SLL', 'SOS', 'SRD', 'SSP', 'STN', 'SYP', 'SZL', 'THB',
-        'TJS', 'TMT', 'TND', 'TOP', 'TRY', 'TTD', 'TWD', 'TZS', 'UAH', 'UGX',
-        'USD', 'UYU', 'UZS', 'VES', 'VND', 'VUV', 'WST', 'XAF', 'XCD', 'XOF',
-        'XPF', 'YER', 'ZAR', 'ZMW',
-    ];
+        'BSD', 'BTC', 'BTN', 'BWP', 'BYR', 'BZD', 'CAD', 'CDF', 'CHF', 'CLF',
+        'CLP', 'CNY', 'COP', 'CRC', 'CUP', 'CVE', 'CZK', 'DJF', 'DKK', 'DOP',
+        'DZD', 'EEK', 'EGP', 'ERN', 'ETB', 'EUR', 'FJD', 'FKP', 'GBP', 'GEL',
+        'GGP', 'GHS', 'GIP', 'GMD', 'GNF', 'GTQ', 'GYD', 'HKD', 'HNL', 'HRK',
+        'HTG', 'HUF', 'IDR', 'ILS', 'IMP', 'INR', 'IQD', 'IRR', 'ISK', 'JEP',
+        'JMD', 'JOD', 'JPY', 'KES', 'KGS', 'KHR', 'KMF', 'KPW', 'KRW', 'KWD',
+        'KYD', 'KZT', 'LAK', 'LBP', 'LKR', 'LRD', 'LSL', 'LTL', 'LVL', 'LYD',
+        'MAD', 'MDL', 'MGA', 'MKD', 'MMK', 'MNT', 'MOP', 'MRO', 'MTL', 'MUR',
+        'MVR', 'MWK', 'MXN', 'MYR', 'MZN', 'NAD', 'NGN', 'NIO', 'NOK', 'NPR',
+        'NZD', 'OMR', 'PAB', 'PEN', 'PGK', 'PHP', 'PKR', 'PLN', 'PYG', 'QAR',
+        'RON', 'RSD', 'RUB', 'RWF', 'SAR', 'SBD', 'SCR', 'SDG', 'SEK', 'SGD',
+        'SHP', 'SLL', 'SOS', 'SRD', 'STD', 'SVC', 'SYP', 'SZL', 'THB', 'TJS',
+        'TMT', 'TND', 'TOP', 'TRY', 'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'USD',
+        'UYU', 'UZS', 'VEF', 'VND', 'VUV', 'WST', 'XAF', 'XAG', 'XAU', 'XCD',
+        'XDR', 'XOF', 'XPF', 'YER', 'ZAR', 'ZMK', 'ZMW', 'ZWL'
+    );
 
     /**
-     * Return a boolean, true or false.
+     * Return a boolean, true or false
      *
-     * @param int $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true)
-     *
+     * @param integer $chanceOfGettingTrue Between 0 (always get false) and 100 (always get true).
      * @return bool
-     *
      * @example true
      */
     public static function boolean($chanceOfGettingTrue = 50)
     {
-        return self::numberBetween(1, 100) <= $chanceOfGettingTrue;
+        return mt_rand(1, 100) <= $chanceOfGettingTrue ? true : false;
     }
 
     /**
      * @example 'cfcd208495d565ef66e7dff9f98764da'
-     *
-     * @return string
      */
     public static function md5()
     {
-        return md5(self::numberBetween());
+        return md5(mt_rand());
     }
 
     /**
      * @example 'b5d86317c2a144cd04d0d7c03b2b02666fafadf2'
-     *
-     * @return string
      */
     public static function sha1()
     {
-        return sha1(self::numberBetween());
+        return sha1(mt_rand());
     }
 
     /**
      * @example '85086017559ccc40638fcde2fecaf295e0de7ca51b7517b6aebeaaf75b4d4654'
-     *
-     * @return string
      */
     public static function sha256()
     {
-        return hash('sha256', self::numberBetween());
+        return hash('sha256', mt_rand());
     }
 
     /**
      * @example 'fr_FR'
-     *
-     * @return string
      */
     public static function locale()
     {
@@ -284,10 +223,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'FR'
-     *
-     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-     *
-     * @return string
+     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function countryCode()
     {
@@ -296,10 +232,7 @@ class Miscellaneous extends Base
 
     /**
      * @example 'FRA'
-     *
-     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
-     *
-     * @return string
+     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      */
     public static function countryISOAlpha3()
     {
@@ -308,8 +241,6 @@ class Miscellaneous extends Base
 
     /**
      * @example 'fr'
-     *
-     * @return string
      */
     public static function languageCode()
     {
@@ -318,25 +249,10 @@ class Miscellaneous extends Base
 
     /**
      * @example 'EUR'
-     *
-     * @see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-     *
-     * @return string
+     * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      */
     public static function currencyCode()
     {
         return static::randomElement(static::$currencyCode);
-    }
-
-    /**
-     * Returns an Emoji (Unicode character between U+1F600 and U+1F637).
-     *
-     * @see https://en.wikipedia.org/wiki/Emoji#Unicode_blocks
-     *
-     * @return string
-     */
-    public static function emoji()
-    {
-        return static::randomElement(static::$emoji);
     }
 }

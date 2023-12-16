@@ -4,22 +4,21 @@ namespace Faker\Provider\ne_NP;
 
 class Address extends \Faker\Provider\Address
 {
-    protected static $wardNumber = ['##', '#'];
-    protected static $streetSuffix = [
-        'bagh', 'bazaar', 'besi', 'chowk', 'gaun', 'kot', 'mandir', 'marg', 'nagar', 'sahar', 'sthan', 'tar',
-    ];
+    protected static $wardNumber = array('##', '#');
+    protected static $streetSuffix = array(
+        'bagh', 'bazaar', 'besi', 'chowk', 'gaun', 'kot', 'mandir', 'marg', 'nagar', 'sahar', 'sthan', 'tar'
+    );
 
-    protected static $postcode = ['#####'];
+    protected static $postcode = array('#####');
 
     /**
-     * @see http://en.wikipedia.org/wiki/List_of_districts_of_Nepal
+     * @link http://en.wikipedia.org/wiki/List_of_districts_of_Nepal
      */
-    protected static $district = [
+    protected static $district = array(
         'Achham', 'Arghakhanchi',
         'Baglung', 'Baitadi', 'Bajhang', 'Bajura', 'Banke', 'Bara', 'Bardiya', 'Bhaktapur', 'Bhojpur',
         'Chitwan',
         'Dadeldhura', 'Dailekh', 'Dang Deukhuri', 'Darchula', 'Dhading', 'Dhankuta', 'Dhanusa', 'Dolakha', 'Dolpa', 'Doti',
-        'Eastern Rukum',
         'Gorkha', 'Gulmi',
         'Humla',
         'Ilam',
@@ -27,20 +26,19 @@ class Address extends \Faker\Provider\Address
         'Kailali', 'Kalikot', 'Kanchanpur', 'Kapilvastu', 'Kaski', 'Kathmandu', 'Kavrepalanchok', 'Khotang',
         'Lalitpur', 'Lamjung',
         'Mahottari', 'Makwanpur', 'Manang', 'Morang', 'Mugu', 'Mustang', 'Myagdi',
-        'Nawalpur', 'Nuwakot',
+        'Nawalparasi', 'Nuwakot',
         'Okhaldhunga',
-        'Palpa', 'Panchthar', 'Parasi', 'Parbat', 'Parsa', 'Pyuthan',
-        'Ramechhap', 'Rasuwa', 'Rautahat', 'Rolpa', 'Rupandehi',
+        'Palpa', 'Panchthar', 'Parbat', 'Parsa', 'Pyuthan',
+        'Ramechhap', 'Rasuwa', 'Rautahat', 'Rolpa', 'Rukum', 'Rupandehi',
         'Salyan', 'Sankhuwasabha', 'Saptari', 'Sarlahi', 'Sindhuli', 'Sindhupalchok', 'Siraha', 'Solukhumbu', 'Sunsari', 'Surkhet', 'Syangja',
         'Tanahu', 'Taplejung', 'Terhathum',
-        'Udayapur',
-        'Western Rukum',
-    ];
+        'Udayapur'
+    );
 
     /**
-     * @see http://www.fallingrain.com/world/NP/
+     * @link http://www.fallingrain.com/world/NP/
      */
-    protected static $cityName = [
+    protected static $cityName = array(
         'Achham', 'Aiselukharka', 'Amardaha', 'Amariya', 'Amlekhganj', 'Amraia', 'Andia', 'Andruli', 'Angbung',  'Arghkot', 'Arughatbazaar', 'Asaina', 'Ataria', 'Atrauli', 'Aulgurta',
         'Bachhuwa', 'Badirpatti', 'Bagar', 'Bagarchhap', 'Baglungbazaar', 'Bahadurganj', 'Bahrabise', 'Bahsi', 'Baijnathpurwa', 'Baindoli', 'Bairia', 'Baitadi', 'Bajhang', 'Bajura', 'Bakarkot', 'Balapur', 'Baldenggarhi', 'Balkot', 'Balma', 'Bandipur', 'Banepa', 'Banepabazaar', 'Baneshore', 'Banghi', 'Banke', 'Bansangu', 'Barbatta', 'Bardiya', 'Barhamjia', 'Basbeti', 'Batarbazaar', 'Bathala', 'Battar', 'Baudha', 'Baudhatinchule', 'Baugachia', 'Beding', 'Belahia', 'Belgaon', 'Belwa', 'Beni', 'Benighat', 'Berhampuri', 'Besisahar', 'Beteni', 'Bethari', 'Betrwati', 'Bhadgaon', 'Bhadrapur', 'Bhagaura', 'Bhagwanpur', 'Bhainsah', 'Bhainse', 'Bhainsedobhn', 'Bhairahawa', 'Bhajni', 'Bhaktapur', 'Bhandar', 'Bharatpur', 'Bhartbs', 'Bhata', 'Bhataulia', 'Bhawanipur', 'Bhikhnatdjori', 'Bhiknathor', 'Bhimkothi', 'Bhimphedi', 'Bhingrigaon', 'Bhitania', 'Bhojpur', 'Bholi', 'Bhopatpur', 'Bhowa', 'Bhujauli', 'Bhurchaur', 'Bhurkia', 'Bijulpura', 'Bilauri', 'Binayakgaon', 'Biprat', 'Biratnagar', 'Birendranagar', 'Birgunj', 'Birkot', 'Birta', 'Bishunpura', 'Bithara', 'Bogri', 'Boradandi', 'Bramhadeumandi', 'Budanilkantha', 'Budhabare', 'Bungmati', 'Burili', 'Burthum', 'Burtibang', 'Butwal',
         'Captainganj', 'Chainpur', 'Chaitya', 'Champapur', 'Chandragadhi', 'Changrang', 'Chapagaun', 'Charikot', 'Chaturale', 'Chaubisho', 'Chaukle', 'Chaukun', 'Chaunrikharka', 'Chautara', 'Chautha', 'Chepang', 'Chepti', 'Chepuwa', 'Chhapia', 'Chhapre', 'Chharkabhot', 'Chhibro', 'Chhintapu', 'Chhokang', 'Chhrkbhotgaon', 'Chhukgaon', 'Chhule', 'Chilankha', 'Chilha', 'Chilkhaya', 'Chisapani', 'Chisapanigadhi', 'Chiybri', 'Chobhar', 'Cholpa', 'Chong', 'Choutar', 'Chuchekanda', 'Chukhung', 'Chumikgyatsa', 'Chunemari', 'Chyabari', 'Chyamtang', 'Chyangthapu', 'Colonelbari',
@@ -62,9 +60,9 @@ class Address extends \Faker\Provider\Address
         'Udaypur', 'Udaypurgadhi', 'Umari', 'Uppardangadhi', 'Uwagaon',
         'Waling', 'Walungchunggola', 'Wapsakhani',
         'Yala', 'Yalbang', 'Yamphodin', 'Yrsa',
-    ];
+    );
 
-    protected static $country = [
+    protected static $country = array(
         'Afghanistan', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica (the territory South of 60 deg S)', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
         'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island (Bouvetoya)', 'Brazil', 'British Indian Ocean Territory (Chagos Archipelago)', 'British Virgin Islands', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi',
         'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote d\'Ivoire', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic',
@@ -80,7 +78,7 @@ class Address extends \Faker\Provider\Address
         'Macao', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar',
         'Namibia', 'Nauru', 'Nepal', 'Netherlands Antilles', 'Netherlands', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway',
         'Oman',
-        'Pakistan', 'Palau', 'Palestinian Territories', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico',
+        'Pakistan', 'Palau', 'Palestinian Territory', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico',
         'Qatar',
         'Reunion', 'Romania', 'Russian Federation', 'Rwanda',
         'Saint Barthelemy', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia (Slovak Republic)', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Svalbard & Jan Mayen Islands', 'Swaziland', 'Sweden', 'Switzerland', 'Syrian Arab Republic',
@@ -89,21 +87,21 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe',
-    ];
-    protected static $cityFormats = [
-        '{{cityName}}',
-    ];
-    protected static $streetNameFormats = [
+        'Zambia', 'Zimbabwe'
+    );
+    protected static $cityFormats = array(
+        '{{cityName}}'
+    );
+    protected static $streetNameFormats = array(
         '{{firstName}}{{streetSuffix}}',
-        '{{lastName}}{{streetSuffix}}',
-    ];
-    protected static $streetAddressFormats = [
+        '{{lastName}}{{streetSuffix}}'
+    );
+    protected static $streetAddressFormats = array(
         '{{streetName}}',
-    ];
-    protected static $addressFormats = [
-        '{{city}}-{{wardNumber}}, {{streetAddress}}, {{district}} {{postcode}}',
-    ];
+    );
+    protected static $addressFormats = array(
+        "{{city}}-{{wardNumber}}, {{streetAddress}}, {{district}} {{postcode}}",
+    );
 
     /**
      * @example 'Kalaiya'

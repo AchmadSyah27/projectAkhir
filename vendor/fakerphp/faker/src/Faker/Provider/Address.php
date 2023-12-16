@@ -2,31 +2,29 @@
 
 namespace Faker\Provider;
 
-class Address extends Base
+class Address extends \Faker\Provider\Base
 {
-    protected static $citySuffix = ['Ville'];
-    protected static $streetSuffix = ['Street'];
-    protected static $cityFormats = [
+    protected static $citySuffix = array('Ville');
+    protected static $streetSuffix = array('Street');
+    protected static $cityFormats = array(
         '{{firstName}}{{citySuffix}}',
-    ];
-    protected static $streetNameFormats = [
-        '{{lastName}} {{streetSuffix}}',
-    ];
-    protected static $streetAddressFormats = [
-        '{{buildingNumber}} {{streetName}}',
-    ];
-    protected static $addressFormats = [
+    );
+    protected static $streetNameFormats = array(
+        '{{lastName}} {{streetSuffix}}'
+    );
+    protected static $streetAddressFormats = array(
+        '{{buildingNumber}} {{streetName}}'
+    );
+    protected static $addressFormats = array(
         '{{streetAddress}} {{postcode}} {{city}}',
-    ];
+    );
 
-    protected static $buildingNumber = ['%#'];
-    protected static $postcode = ['#####'];
-    protected static $country = [];
+    protected static $buildingNumber = array('##');
+    protected static $postcode = array('#####');
+    protected static $country = array();
 
     /**
      * @example 'town'
-     *
-     * @return string
      */
     public static function citySuffix()
     {
@@ -35,8 +33,6 @@ class Address extends Base
 
     /**
      * @example 'Avenue'
-     *
-     * @return string
      */
     public static function streetSuffix()
     {
@@ -45,8 +41,6 @@ class Address extends Base
 
     /**
      * @example '791'
-     *
-     * @return string
      */
     public static function buildingNumber()
     {
@@ -55,8 +49,6 @@ class Address extends Base
 
     /**
      * @example 'Sashabury'
-     *
-     * @return string
      */
     public function city()
     {
@@ -67,8 +59,6 @@ class Address extends Base
 
     /**
      * @example 'Crist Parks'
-     *
-     * @return string
      */
     public function streetName()
     {
@@ -79,8 +69,6 @@ class Address extends Base
 
     /**
      * @example '791 Crist Parks'
-     *
-     * @return string
      */
     public function streetAddress()
     {
@@ -91,8 +79,6 @@ class Address extends Base
 
     /**
      * @example 86039-9874
-     *
-     * @return string
      */
     public static function postcode()
     {
@@ -101,8 +87,6 @@ class Address extends Base
 
     /**
      * @example '791 Crist Parks, Sashabury, IL 86039-9874'
-     *
-     * @return string
      */
     public function address()
     {
@@ -113,8 +97,6 @@ class Address extends Base
 
     /**
      * @example 'Japan'
-     *
-     * @return string
      */
     public static function country()
     {
@@ -122,45 +104,20 @@ class Address extends Base
     }
 
     /**
-     * Uses signed degrees format (returns a float number between -90 and 90)
-     *
-     * @example '77.147489'
-     *
-     * @param float|int $min
-     * @param float|int $max
-     *
-     * @return float
+     * @example 77.147489
+     * @return float Uses signed degrees format (returns a float number between -90 and 90)
      */
-    public static function latitude($min = -90, $max = 90)
+    public static function latitude()
     {
-        return static::randomFloat(6, $min, $max);
+        return static::randomFloat(6, 0, 180) - 90;
     }
 
     /**
-     * Uses signed degrees format (returns a float number between -180 and 180)
-     *
-     * @example '86.211205'
-     *
-     * @param float|int $min
-     * @param float|int $max
-     *
-     * @return float
+     * @example 86.211205
+     * @return float Uses signed degrees format (returns a float number between -180 and 180)
      */
-    public static function longitude($min = -180, $max = 180)
+    public static function longitude()
     {
-        return static::randomFloat(6, $min, $max);
-    }
-
-    /**
-     * @example array('77.147489', '86.211205')
-     *
-     * @return float[]
-     */
-    public static function localCoordinates()
-    {
-        return [
-            'latitude' => static::latitude(),
-            'longitude' => static::longitude(),
-        ];
+        return static::randomFloat(6, 0, 360) - 180;
     }
 }
