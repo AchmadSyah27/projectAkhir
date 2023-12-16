@@ -4,49 +4,33 @@ namespace Faker\Provider\nl_NL;
 
 class Person extends \Faker\Provider\Person
 {
-    protected static $maleNameFormats = [
+    protected static $maleNameFormats = array(
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}}',
         '{{title}} {{firstNameMale}} {{lastName}}',
         '{{firstNameMale}} {{lastName}} {{suffix}}',
         '{{title}} {{firstNameMale}} {{lastName}} {{suffix}}',
-    ];
+    );
 
-    protected static $femaleNameFormats = [
+    protected static $femaleNameFormats = array(
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}}',
         '{{title}} {{firstNameFemale}} {{lastName}}',
         '{{firstNameFemale}} {{lastName}} {{suffix}}',
         '{{title}} {{firstNameFemale}} {{lastName}} {{suffix}}',
-    ];
+    );
 
-    protected static $title = [
-        'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.',
-    ];
+    protected static $title = array(
+        'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.'
+    );
 
-    protected static $suffix = [
-        'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M',
-    ];
+    private static $suffix = array(
+        'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M'
+    );
 
-    protected static $prefix = ["'s", "'t", 'a', 'aan', "aan 't", 'aan de', 'aan den', 'aan der', 'aan het',
-        'aan t', 'af', 'al', 'am', 'am de', 'auf', 'auf dem', 'auf den', 'auf der', 'auf ter', 'aus', "aus 'm",
-        'aus dem', 'aus den', 'aus der', 'aus m', 'ben', 'bij', "bij 't", 'bij de', 'bij den', 'bij het', 'bij t',
-        'bin', 'boven d', "boven d'", 'd', "d'", 'da', 'dal', 'dal’', 'dalla', 'das', 'de', 'de die', 'de die le',
-        'de l', 'de l’', 'de la', 'de las', 'de le', 'de van der', 'deca', 'degli', 'dei', 'del', 'della', 'den',
-        'der', 'des', 'di', 'die le', 'do', 'don', 'dos', 'du', 'el', 'het', 'i', 'im', 'in', "in 't", 'in de', 'in den',
-        'in der', 'in het', 'in t', 'l', 'l’', 'la', 'las', 'le', 'les', 'lo', 'los', 'of', 'onder', "onder 't",
-        'onder de', 'onder den', 'onder het', 'onder t', 'op', "op 't", 'op de', 'op den', 'op der', 'op gen', 'op het',
-        'op t', 'op ten', 'over', "over 't", 'over de', 'over den', 'over het', 'over t', 's', "s'", 't', 'te', 'ten',
-        'ter', 'tho', 'thoe', 'thor', 'to', 'toe', 'tot', 'uijt', "uijt 't", 'uijt de', 'uijt den', 'uijt te de',
-        'uijt ten', 'uit', "uit 't", 'uit de', 'uit den', 'uit het', 'uit t', 'uit te de', 'uit ten', 'unter', 'van',
-        "van 't", 'van De', 'van de', 'van de l', "van de l'", 'van den', 'van der', 'van gen', 'van het', 'van la',
-        'van t', 'van ter', 'van van de', 'ver', 'vom', 'von', "von 't", 'von dem', 'von den', 'von der', 'von t', 'voor',
-        "voor 't", 'voor de', 'voor den', "voor in 't", 'voor in t', 'vor', 'vor der', 'zu', 'zum', 'zur',
-    ];
-
-    protected static $commonDutchLastNames = [
+    protected static $commonDutchLastNames = array(
         'de Jong', 'Jansen', 'de Vries', 'van de Berg', 'van den Berg', 'van der Berg', 'van Dijk', 'Bakker', 'Janssen',
         'Visser', 'Smit', 'Meijer', 'Meyer', 'de Boer', 'Mulder', 'de Groot', 'Bos', 'Vos', 'Peters', 'Hendriks',
         'van Leeuwen', 'Dekker', 'Brouwer', 'de Wit', 'Dijkstra', 'Smits', 'de Graaf', 'van der Meer', 'van der Linden',
@@ -60,10 +44,10 @@ class Person extends \Faker\Provider\Person
         'de Vos', 'Bosch', 'van Dongen', 'Schipper', 'de Koning', 'van der Laan', 'Koning', 'Driessen', 'van Doorn',
         'Hermans', 'Evers', 'van den Bosch', 'van der Meulen', 'Hofman', 'Bosman', 'Wolters', 'Sanders',
         'van der Horst', 'Mol', 'Kuijpers', 'Molenaar', 'van de Pol', 'van den Pol', 'van der Pol', 'de Leeuw',
-        'Verbeek',
-    ];
+        'Verbeek'
+    );
 
-    protected static $dutchLastNames = [
+    protected static $dutchLastNames = array(
         'Aalts', 'Aarden', 'Aarts', 'Adelaar', 'Adriaansen', 'Adriaensdr', 'Adriaense', 'Adryaens', 'Aeije',
         'Aelftrud van Wessex', 'Aertsz', 'van Alenburg', 'van Allemanië', 'Alpaidis', 'Amalrada', 'van Amstel',
         'Ansems', 'Appelman', 'Arens', 'Arent', 'Ariens', 'Ariens Ansems', 'van Arkel', 'Arnold', 'van Arnsberg',
@@ -86,7 +70,7 @@ class Person extends \Faker\Provider\Person
         'Coreth von und zu Coredo und Starkenberg', 'Cornelisse', 'Cornelissen', 'Cornelisz', 'van den Corput',
         'Corstiaens', 'Cosman', 'van de Coterlet', 'Courtier', 'van Cuijck', 'van Daal', 'Dachgelder', 'Dachgeldt',
         'Dachgelt', 'van Dagsburg', 'van Dalem', 'van Dam', 'van de Darnau', 'David', 'Dekker', 'Demmendaal',
-        'Dennenberg', 'die Bont', 'Diesbergen', 'van Dijk', 'Dijkman', 'van Dillen', 'Dircken', 'Dirksen', 'Dirven',
+        'Dennenberg', 'Die Bont', 'Diesbergen', 'van Dijk', 'Dijkman', 'van Dillen', 'Dircken', 'Dirksen', 'Dirven',
         'Doesburg', 'van Dokkum', 'van Dommelen', 'van Dongen', 'van Dooren', 'Doorhof', 'Doornhem', 'Dorsman',
         'Doyle', 'Draaisma', 'van Drenthe', 'Dries', 'Drysdale', 'Dubois', 'van Duivenvoorde', 'Duivenvoorden',
         'van Duvenvoirde', 'van Duyvenvoorde', 'die Bont', 'die Pelser', 'die Witte', 'van Eck', 'Eckhardt', 'Eelman',
@@ -105,18 +89,18 @@ class Person extends \Faker\Provider\Person
         'Groote', 'de Grote', 'Gruijl', 'de Gruijl', 'de Gruijter', 'de Gruil', 'de Grunt', 'de Gruson', 'le Guellec',
         'Guit', 'le Gulcher', 'Höning', 'Haack', 'den Haag', 'van Haarlem', 'de Haas', 'van Haeften', 'Haengreve',
         'van Hagen', 'Hagendoorn', 'Hak', 'Hakker', 'van Ham', 'van Hamaland', 'Haneberg', 'Hanegraaff', 'Haring',
-        'Haselaar', 'van Haspengouw', 'Hazenveld', 'de Heer', 'Heere', 'Heerkens',
+        'Haselaar', 'van Haspengouw Hesbaye', 'van Haspengouw', 'Hazenveld', 'de Heer', 'Heere', 'Heerkens',
         'Heerschop', 'Hehl', 'van der Heiden', 'van der Heijden', 'Heijman', 'Heijmans', 'Heijmen', 'Heinrichs',
-        'Hekker', 'Hellevoort', 'Helmerhorst', 'van Hemert', 'Hemma', 'Hendricks', 'Hendriks',
-        'Hendrikse', 'van Henegouwen',  'van den Henst', 'Heribert van Laon', "d' Heripon",
+        'Hekker', 'Hellevoort', 'Helmerhorst', 'van Hemert', 'Hemma van Allemanië', 'Hendricks', 'Hendriks',
+        'Hendrikse', 'van Henegouwen', 'Henric van den Nuwenhuse', 'van den Henst', 'Heribert van Laon', 'd\' Heripon',
         'Hermans', 'van Herstal', 'van Heusden', 'Hexspoor', 'Heymans', 'Heyne', 'Hoedemakers', 'van den Hoek', 'Hoeks',
         'Hoelen', 'Hoes', 'van Hoevel en van Zwindrecht', 'van der Hoeven', 'van Holland', 'Hollander', 'Holthuis',
         'Hondeveld', 'Honing', 'de Hoog', 'Hoogers', 'de Hoogh', 'Hoppenbrouwer', 'Horrocks', 'van der Horst',
-        'van Hostaden', 'Houdijk', "van 't Houteveen", 'Huberts', 'Huel', 'Huijben', 'Huijbrechts', 'Huijs',
+        'van Hostaden', 'Houdijk', 'van \'t Houteveen', 'Huberts', 'Huel', 'Huijben', 'Huijbrechts', 'Huijs',
         'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
         'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
-        'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
-        'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorissen', 'van Jumiège', 'Jurrijens', 'Köster',
+        'Janssen', 'Janssens', 'Jasper dr.', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems', 'de Jode Vastraedsd',
+        'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorrisen', 'van Jumiège', 'Jurrijens', 'Köster',
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
         'Keijser', 'de Keijser', 'Keijzer', 'de Keijzer', 'Keltenie', 'van Kempen', 'Kerkhof', 'Ketel', 'Ketting',
         'der Kijnder', 'van der Kint', 'Kirpenstein', 'Kisman', 'van Klaarwater', 'van de Klashorst', 'Kleibrink',
@@ -151,7 +135,7 @@ class Person extends \Faker\Provider\Person
         'van de Plas', 'van der Plas', 'van der Ploeg', 'van der Pluijm', 'Poncelet', 'Ponci', 'Pons', 'van Poppel',
         'Post', 'Potters', 'van der Pouw', 'van Praagh', 'Pratt', 'Prinsen', 'Puig', 'Rackham', 'Rademaker', 'Ramaker',
         'Recer', 'Recers', 'de Reede', 'Rehorst', 'Reijers', 'Reimes', 'Rek', 'Remmers', 'van Rheineck', 'Ridder',
-        'Riem', 'van Riet', "van 't Riet", 'Rietveld', 'Rijcken', 'Rijks', 'Rijn', 'van Rijnsbergen', 'Rijntjes',
+        'Riem', 'van Riet', 'van \'t Riet', 'Rietveld', 'Rijcken', 'Rijks', 'Rijn', 'van Rijnsbergen', 'Rijntjes',
         'van Rijthoven', 'Rippey', 'Risma', 'Robbrechts Bruijne', 'Roessink', 'van Roijen', 'Romijn', 'de Roo',
         'Roodesteijn', 'van Rooij', 'Room', 'de Roos', 'Roose', 'Roosenboom', 'van Rossum', 'Rotteveel', 'Roukes',
         'Rousselet', 'Rouwenhorst', 'Rouwhorst', 'Rubben', 'Ruijs', 'Rutten', 'van Saksen', 'Salet', 'van Salm',
@@ -168,26 +152,26 @@ class Person extends \Faker\Provider\Person
         'van Stralen', 'van der Strigt', 'de Strigter', 'Strijker', 'Strik', 'Stuivenberg', 'Suijker', 'van Suinvorde',
         'van Susa', 'de Swart', 'Symons', 'Takkelenburg', 'Tammerijn', 'Tamsma', 'Terry', 'den Teuling', 'Teunissen',
         'Texier', 'Thatcher', 'The Elder', 'Thomas', 'Thout', 'Tielemans', 'Tillmanno', 'Timmerman', 'Timmermans',
-        'Tins', 'Tirie', 'Totwiller', 'van Tours', 'van Tuijl', 'Tuithof', 'Uittenbosch', 'Ulrich',
-        'Uphaus', 'Uphuis', 'Uphus', 'VI', 'Vaessen', 'Vallenduuk', 'Van Bragt', 'Vandenbergh',
+        'Tins', 'Tirie', 'Totwiller', 'van Tours', 'van Tuijl', 'Tuithof', 'Uit de Willigen', 'Uittenbosch', 'Ulrich',
+        'Unruoch Hunerik', 'Uphaus', 'Uphuis', 'Uphus', 'VI', 'Vaessen', 'Vallenduuk', 'Van Bragt', 'Vandenbergh',
         'Vastenhouw', 'Veenendaal', 'Vegt', 'van der Veiver', 'Velderman', 'van Velthoven', 'Veltman', 'van Velzen',
         'van de Ven', 'van Venrooy', 'Verbeeck', 'Verbeek', 'Verboom', 'Verbruggen', 'Verda', 'van Verdun', 'Vergeer',
         'Verhaar', 'Verhagen', 'Verharen', 'Verheij', 'Verheuvel', 'Verhoeven', 'Verkade', 'van Vermandois',
         'Vermeulen', 'Verschuere', 'Verschut', 'Versluijs', 'Vertoor', 'Vertooren', 'Vervoort', 'Verwoert', 'Vial',
         'Vierdag', 'Vignon', 'van Vlaanderen', 'Volcke', 'van Voorhout', 'van Voorst', 'Voortman', 'Vos', 'Vrancken',
         'de Vries', 'de Vroege', 'de Vrome', 'ter Waarbeek', 'Waardeloo', 'van Waas', 'Wagenvoort', 'van Wallaert',
-        'Walsteijn', 'Walter', 'van Wassenaar', 'van de Water', 'Weeldenburg', 'Weerdenburg',
-        'Weijland', 'Weijters', 'van Wel', "van 't Wel", 'Welf', 'Wendt', 'Wensen', 'de Werd', 'Werdes',
-        'van Wessex', 'Westerbeek', 'Westerburg', 'Westermann',
+        'Walsteijn', 'Walter', 'Waltrade Walderade', 'van Wassenaar', 'van de Water', 'Weeldenburg', 'Weerdenburg',
+        'Weijland', 'Weijters', 'van Wel', 'van \'t Wel', 'Welf', 'Wendt', 'Wensen', 'de Werd', 'Werdes',
+        'Werl-Arnsberg, van', 'van Wessex', 'West-Francië, van', 'Westerbeek', 'Westerburg', 'Westermann',
         'van Westfalen', 'van de Weterink', 'Wever', 'Weyland', 'Weylant', 'van Wickerode', 'van de Wiel', 'Wigman',
         'Wijland', 'van Wijland', 'Wilcken', 'Wildschut', 'Willems', 'Willems van Lier', 'Willemsen', 'Wilmont',
-        'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel',
+        'Wilson', 'Winnrich', 'Winters', 'Wipstrik', 'de Wit', 'van den Wittenboer', 'Wolffel', 'Wolfsdr',
         'Wolfswinkel', 'Wolters', 'Wolzak', 'Wooning', 'Woudenberg', 'Wouters', 'Wouters van Eijndhoven', 'Woutersz',
         'Wright', 'Wunderink', 'Wutke', 'Zaal', 'Zeemans', 'Zeldenrust', 'Zevenboom', 'van der Zijl', 'Zijlemans',
-        'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen',
-    ];
+        'Zijlmans', 'Zuidweg', 'Zuijdveld', 'van Zwaben', 'Zwart', 'Zwijsen'
+    );
 
-    protected static $commonForeignLastNames = [
+    protected static $commonForeignLastNames = array(
         'Yilmaz', 'Nguyen', 'Ali', 'Mohamed', 'Yildiz', 'Yildirim', 'Öztürk', 'Demir', 'Hassan', 'Şahin', 'Aydin',
         'Özdemir', 'Çelik', 'Kiliç', 'Arslan', 'Dogan', 'Tran', 'Abdi', 'Aslan', 'Hussein', 'Koç', 'Özcan', 'Hussain',
         'Kurt', 'Pham', 'Autar', 'Polat', 'Korkmaz', 'Le', 'Çetin', 'Koçak', 'Said', 'Ünal', 'Bulut', 'Ramautar',
@@ -196,10 +180,10 @@ class Person extends \Faker\Provider\Person
         'Erdoğan', 'Loukili', 'Tekin', 'Ramlal', 'Yavuz', 'Sambo', 'Coşkun', 'Yalçin', 'Biharie', 'Köse', 'Dogan',
         'Aktaş', 'Avci', 'Uysal', 'Badal', 'Bozkurt', 'Ramos', 'Moussaoui', 'Akin', 'Özer', 'Malik', 'Sital',
         'El Idrissi', 'Aziz', 'Demirel', 'Henriquez', 'Janga', 'Hooi', 'Geerman', 'Güler', 'Aksoy', 'Soekhoe', 'Turan',
-        'Güneş', 'Narain', 'Ahmadi', 'Esajas', 'Zhou', 'Tahiri', 'Çiçek', 'Mohan', 'Cicilia', 'Mangal',
-    ];
+        'Güneş', 'Narain', 'Ahmadi', 'Esajas', 'Zhou', 'Tahiri', 'Çiçek', 'Mohan', 'Cicilia', 'Mangal'
+    );
 
-    protected static $longLastNames = [
+    protected static $longLastNames = array(
         'Albinus genaamd Weiss von Weissenlöw', "van Bol'es Rijnbende", 'Doris Bin Sijlvanus',
         'Douglas tot Springwoodpark', 'Dubbeldemuts van der Sluys', 'Duhme auf der Heide sive Heydahrens',
         'Elsjan of Wipper', "de la Fontaine und d'Harnoncourt Unverzagt", 'Franse Storm', 'von Frijtag Drabbe Künzel',
@@ -208,10 +192,10 @@ class Person extends \Faker\Provider\Person
         'Martena van Burmania Vegilin van Claerbergen', 'Paspoort van Grijpskerke en Poppendamme',
         'de Pruyssenaere de la Woestijne', 'Rahajoe genaamd en geschreven ten Kate', 'de la Rive Box',
         'Spiegelmaker Spanjaard', 'Spring in ‘t Veld', 'Vos Specht', 'Vroeg in de Wei', 'Zowran von Ranzow',
-        'Zuérius Boxhorn van Miggrode', 'Zum Vörde Sive Vörding',
-    ];
+        'Zuérius Boxhorn van Miggrode', 'Zum Vörde Sive Vörding'
+    );
 
-    protected static $firstNameFemale = [
+    protected static $firstNameFemale = array(
         'Emma', 'Sophie', 'Julia', 'Anna', 'Lisa', 'Isa', 'Eva', 'Saar', 'Lotte', 'Tess', 'Lynn', 'Fleur', 'Sara',
         'Lieke', 'Noa', 'Fenna', 'Sarah', 'Mila', 'Sanne', 'Roos', 'Elin', 'Zoë', 'Evi', 'Maud', 'Jasmijn', 'Femke',
         'Nina', 'Anne', 'Noor', 'Amy', 'Sofie', 'Olivia', 'Feline', 'Liv', 'Esmee', 'Nora', 'Iris', 'Lina', 'Luna',
@@ -232,10 +216,10 @@ class Person extends \Faker\Provider\Person
         'Féline', 'Yasmine', 'Evelien', 'Ize', 'Mirte', 'Ninthe', 'Ecrin', 'Kyara', 'Maya', 'Nisa', 'Leah', 'Maryam',
         'Angelina', 'Catharina', 'Lindsey', 'Loes', 'Yinthe', 'Sienna', 'Adriana', 'Esila', 'Jente', 'Lizz', 'Lucy',
         'Nadine', 'Selina', 'Fatima', 'Maaike', 'Aaliyah', 'Amina', 'Inaya', 'Selena', 'Frederique', 'Pippa', 'Puk',
-        'Sylvie', 'Annemijn', 'Helena', 'Jayda', 'Nadia', 'Amelia', 'Jinthe', 'Jolijn', 'Maja', 'Tirza',
-    ];
+        'Sylvie', 'Annemijn', 'Helena', 'Jayda', 'Nadia', 'Amelia', 'Jinthe', 'Jolijn', 'Maja', 'Tirza'
+    );
 
-    protected static $firstNameMale = [
+    protected static $firstNameMale = array(
         'Daan', 'Bram', 'Sem', 'Lucas', 'Milan', 'Levi', 'Luuk', 'Thijs', 'Jayden', 'Tim', 'Finn', 'Stijn', 'Thomas',
         'Lars', 'Ruben', 'Jesse', 'Noah', 'Julian', 'Max', 'Liam', 'Mees', 'Sam', 'Sven', 'Gijs', 'Luca', 'Teun',
         'Tijn', 'Siem', 'Mats', 'Jens', 'Benjamin', 'Adam', 'Ryan', 'Jan', 'Floris', 'David', 'Olivier', 'Cas', 'Tygo',
@@ -256,23 +240,22 @@ class Person extends \Faker\Provider\Person
         'Collin', 'Luke', 'Merijn', 'Vigo', 'Beau', 'Bilal', 'Jorn', 'Vincent', 'Matthias', 'Ayden', 'Maxim', 'Yassin',
         'Dion', 'Jake', 'Kyano', 'Kick', 'Mustafa', 'Michael', 'Youssef', 'Elias', 'Naud', 'Senna', 'Brian', 'Jari',
         'Mehmet', 'Micha', 'Stefan', 'Arie', 'Duuk', 'Zakaria', 'Ayoub', 'Faas', 'Olaf', 'Tristan', 'Mads', 'Berend',
-        'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler',
-    ];
+        'Mart', 'Sten', 'Ivan', 'Philip', 'Giel', 'Lex', 'Rik', 'Tyler'
+    );
 
     /**
      * @example 'Doe'
      */
     public function lastName()
     {
-        $determinator = self::numberBetween(0, 25);
-
+        $determinator = static::numberBetween(0, 3);
         if ($determinator === 0) {
             $lastName = static::randomElement(static::$longLastNames);
-        } elseif ($determinator <= 10) {
+        } elseif ($determinator === 1) {
             $lastName = static::randomElement(static::$commonDutchLastNames);
-        } elseif ($determinator <= 15) {
+        } elseif ($determinator === 2) {
             $lastName = static::randomElement(static::$commonForeignLastNames);
-        } else {
+        } elseif ($determinator === 3) {
             $lastName = static::randomElement(static::$dutchLastNames);
         }
 
@@ -289,7 +272,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleMale()
     {
-        return static::randomElement(static::$title);
+        return static::title();
     }
 
     /**
@@ -297,7 +280,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleFemale()
     {
-        return static::randomElement(static::$title);
+        return static::title();
     }
 
     /**
@@ -306,48 +289,5 @@ class Person extends \Faker\Provider\Person
     public static function suffix()
     {
         return static::randomElement(static::$suffix);
-    }
-
-    /**
-     * @example 'van der'
-     */
-    public static function prefix()
-    {
-        return static::randomElement(static::$prefix);
-    }
-
-    /**
-     * @see https://nl.wikipedia.org/wiki/Burgerservicenummer#11-proef
-     *
-     * @return string
-     */
-    public function idNumber()
-    {
-        $nr = [];
-        $nr[] = 0;
-
-        while (count($nr) < 8) {
-            $nr[] = static::randomDigit();
-        }
-        $nr[] = self::numberBetween(0, 6);
-
-        if ($nr[7] == 0 && $nr[8] == 0) {
-            $nr[7] = 0;
-        }
-
-        $bsn = (9 * $nr[8]) + (8 * $nr[7]) + (7 * $nr[6]) + (6 * $nr[5]) + (5 * $nr[4]) + (4 * $nr[3]) + (3 * $nr[2]) + (2 * $nr[1]);
-        $nr[0] = floor($bsn - floor($bsn / 11) * 11);
-
-        if ($nr[0] > 9) {
-            if ($nr[1] > 0) {
-                $nr[0] = 8;
-                --$nr[1];
-            } else {
-                $nr[0] = 1;
-                ++$nr[1];
-            }
-        }
-
-        return implode('', array_reverse($nr));
     }
 }
