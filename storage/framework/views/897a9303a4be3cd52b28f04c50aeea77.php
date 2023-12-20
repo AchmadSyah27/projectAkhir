@@ -63,6 +63,13 @@
         </div><!-- /.col-md-3 -->
 
         <div class="col-md-9">
+            
+            <?php if(session('message')): ?>
+              <div class="alert alert-success">
+                  <?php echo e(session('message')); ?>
+
+              </div>
+            <?php endif; ?>
             <?php echo $__env->yieldContent('content'); ?>
         </div>
       </div>

@@ -63,6 +63,12 @@
         </div><!-- /.col-md-3 -->
 
         <div class="col-md-9">
+            {{-- menangkap ke dalam session jika ada pesan berhasil pada session --}}
+            @if(session('message'))
+              <div class="alert alert-success">
+                  {{session('message')}}
+              </div>
+            @endif
             @yield('content')
         </div>
       </div>
