@@ -2,54 +2,71 @@
 <div class="panel panel-default">
     <div class="panel-heading">
       <strong>Add Contact</strong>
-    </div>           
+    </div>       
+    <?php echo Form::open (['route' => 'contacts.store']); ?>    
     <div class="panel-body">
       <div class="form-horizontal">
         <div class="row">
           <div class="col-md-8">
+            <?php if(count($errors)): ?>
+            <div class="alert alert-danger">
+                <ul>
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </div>
+            <?php endif; ?>
             <div class="form-group">
               <label for="name" class="control-label col-md-3">Name</label>
               <div class="col-md-8">
-                <input type="text" name="name" id="name" class="form-control">
+                
+                <?php echo Form::text('name', null, ['class' => 'form-control']); ?>
+
               </div>
             </div>
 
             <div class="form-group">
               <label for="company" class="control-label col-md-3">Company</label>
               <div class="col-md-8">
-                <input type="text" name="company" id="company" class="form-control">
+                
+                <?php echo Form::text('company', null, ['class' => 'form-control']); ?>
+
               </div>
             </div>
 
             <div class="form-group">
               <label for="email" class="control-label col-md-3">Email</label>
               <div class="col-md-8">
-                <input type="text" name="email" id="email" class="form-control">
+                
+                <?php echo Form::text('email', null, ['class' => 'form-control']); ?>
+
               </div>
             </div>
 
             <div class="form-group">
               <label for="phone" class="control-label col-md-3">Phone</label>
               <div class="col-md-8">
-                <input type="text" name="phone" id="phone" class="form-control">
+                
+                <?php echo Form::text('phone', null, ['class' => 'form-control']); ?>
+
               </div>
             </div>
 
             <div class="form-group">
               <label for="name" class="control-label col-md-3">Address</label>
               <div class="col-md-8">
-                <textarea name="address" id="address" rows="3" class="form-control"></textarea>
+                
+                <?php echo e(Form::textarea('address', null, ['class' => 'form-control', 'rows' => 3])); ?>
+
               </div>
             </div>
             <div class="form-group">
               <label for="group" class="control-label col-md-3">Group</label>
               <div class="col-md-5">
-                <select name="group" id="group" class="form-control">
-                  <option value="">Select group</option>
-                  <option value="1">Family</option>
-                  <option value="2">Friend</option>
-                  <option value="3">Other</option>
-                </select>
+                
+                <?php echo Form::select('group_id', App\Models\Group::pluck('name','id'), null, ['class' => 'form-control']); ?>
+
               </div>
               <div class="col-md-3">
                 <a href="#" id="add-group-btn" class="btn btn-default btn-block">Add Group</a>
@@ -95,6 +112,8 @@
         </div>
       </div>
     </div>
+    <?php echo Form::close(); ?>
+
   </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/nusacodes/projectAkhir/projectAkhir/resources/views/contacts/create.blade.php ENDPATH**/ ?>
