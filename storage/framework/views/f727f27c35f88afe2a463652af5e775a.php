@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <strong>Add Contact</strong>
     </div>       
-    <?php echo Form::open (['route' => 'contacts.store']); ?>    
+    <?php echo Form::open (['route' => 'contacts.store', 'files' => true]); ?>    
         <?php echo $__env->make("contacts.form", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo Form::close(); ?>
 

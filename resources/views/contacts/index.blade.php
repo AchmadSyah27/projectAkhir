@@ -12,7 +12,10 @@
             <div class="media">
             <div class="media-left">
                 <a href="#">
-                <img class="media-object" src="http://placehold.it/100x100" alt="...">
+                    {{-- untuk yang tidak memiliki foto, akan pakai default image-nya --}}
+                    <?php $photo = ! is_null($contact->photo) ? $contact->photo : 'default.jpg' ?>
+                    {{-- untuk memanggil file foto yang sudah di upload lalu tampil di list contact --}}
+                    {!! Html::image('uploads/' . $photo, $contact->name, ['class' => 'media-object', 'width' => 100, 'height' => 100]) !!}
                 </a>
             </div>
             <div class="media-body">

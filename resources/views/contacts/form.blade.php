@@ -89,11 +89,14 @@
         <div class="col-md-4">
           <div class="fileinput fileinput-new" data-provides="fileinput">
             <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
-              <img src="http://placehold.it/150x150" alt="Photo">
+                    {{-- untuk yang tidak memiliki foto, akan pakai default image-nya --}}
+                    <?php $photo = ! empty($contact->photo) ? $contact->photo : 'default.jpg' ?>
+                    {{-- untuk memanggil file foto yang sudah di upload lalu tampil di list contact --}}
+                    {!! Html::image('uploads/' . $photo, "Choose photo", ['width' => 150, 'height' => 150]) !!}
             </div>
             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
             <div class="text-center">
-              <span class="btn btn-default btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+              <span class="btn btn-default btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists" method="POST" enctype="multipart/form-data">Change</span>{!! Form::file('photo') !!}</span>
               <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
             </div>
           </div>

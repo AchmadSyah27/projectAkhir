@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <strong>Edit Contact</strong>
     </div>       
-    <?php echo Form::model ($contact, ['route' => ['contacts.update', $contact->id], 'method' => 'PATCH']); ?>    
+    <?php echo Form::model ($contact, ['files' => true, 'route' => ['contacts.update', $contact->id], 'method' => 'PATCH']); ?>    
     
     <?php echo $__env->make("contacts.form", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
